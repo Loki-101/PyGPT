@@ -7,4 +7,12 @@ This is as simple and efficient of a Python Discord Bot to interact with GPT-3 a
 
 The reason letting it format stuff like that is dangerous is because users can trick the bot into using things like @everyone or ^role myuser Admin. Some good ways to protect against this is to have the bot embed text, add checks to the code to prevent code injection techniques, and settings correct permissions for your actual Discord Bot when you invite it to your server so it can't do anything harmful. Again this is intended to serve as a base and make it easy for people to understand the code and build off of it. I even formatted the if statements to have one argument per line for readability. You have all of the control.
 
-The bot uses environmental variables rather than putting variables directly in the code for security reasons. The easiest way to use this bot is to give it only the permissions it needs rather than Administrator and use it in a Pterodactyl Panel Container so code injection attacks will bounce harmlessly off your isolated read-only filesystem docker container. Obviously there are countless ways to both use and improve upon this Bot depending on personal preferences. Have fun :D
+The bot uses environmental variables rather than putting variables directly in the code for security reasons. The easiest way to use this bot is to give it only the permissions it needs rather than Administrator and use it in a Pterodactyl Panel Container so code injection attacks will bounce harmlessly off your isolated read-only filesystem docker container. Obviously there are countless ways to both use and improve upon this Bot depending on personal preferences.
+
+This bot is designed to run in a specified channel only so that you can set a channel to slowmode to avoid overloading your API Key. You can get an api key at https://beta.openai.com.
+The bot by default will only respond to messages that start with Hey and then the bot's name that you set in an environmental variable. Some examples:
+Hey PyGPT-3, how are you doing today?
+hey PyGPT-3, how are you doing today?
+Hey pygpt-3 how are you doing today?
+
+The Bot will convert the characters until the bot's name to lowercase and remove the comma if one exists, then capitalize the first character, so the actual prompt sent to the AI in these cases would just be "How are you doing today?"
