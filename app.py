@@ -13,7 +13,7 @@ if debug == "true":
     debug = True
 openai.api_key = os.getenv("OPENAI_API_KEY")
 discord_bot_token = os.getenv("DISCORD_BOT_TOKEN")
-bot_name = os.getenv("BOT_NAME")
+bot_name = os.getenv("BOT_NAME").lower()
 channel_id = os.getenv("CHANNEL_ID")
 
 if debug:
