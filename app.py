@@ -30,7 +30,7 @@ def generate_response(message):
         response = openai.Completion.create(
             engine="text-davinci-003",
             prompt=(f"{message}\n"),
-            max_tokens=4000,
+            max_tokens=3000, # Max Tokens in any request is 4000, but the prompt also takes up tokens. If you want a larger prompt and smaller response, shrink this.
             temperature=0.5,
             top_p=1
         )
