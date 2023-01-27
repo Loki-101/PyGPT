@@ -30,14 +30,14 @@ def generate_response(message):
         response = openai.Completion.create(
             engine="text-davinci-003",
             prompt=(f"{message}\n"),
-            max_tokens=3000, # Max Tokens in any request is 4000, but the prompt also takes up tokens. If you want a larger prompt and smaller response, shrink this.
+            max_tokens=3000, # Max Tokens in any request for this model is 4097, but the prompt also counts towards this. If you want a larger prompt and smaller response, shrink this value. If you want a shorter prompt but a larger response, increase this value.
             temperature=0.5,
             top_p=1
         )
-    except openai.exceptions.OpenAiError as e:
+    except Exception as e:
         if debug:
             print("Error Occured: ",e)
-        return None
+        return e
     if debug:
         print("API Response: ", json.dumps(response, indent=2))
     return response.choices[0].text
