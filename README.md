@@ -1,7 +1,7 @@
 # PyGPT-3
 Simple Python GPT-3 Discord Bot w/optional Pterodactyl Egg
 
-This is meant to either serve as a base for more complex bots or run standalone.
+This is meant to run in Pterodactyl Panel or run Standalone on any platform.
 
 Inspiration for the Pterodactyl Egg was taken from ParkerVCP's generic Python egg. All credit to ParkerVCP for making great eggs and yolks (Docker Images that go with the Pterodactyl Eggs). https://github.com/parkervcp/eggs/tree/master/generic/python
 
