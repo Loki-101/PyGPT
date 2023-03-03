@@ -2,6 +2,8 @@
 Simple Python Discord ChatBot w/optional Pterodactyl Egg
 Powered by OpenAI
 
+**V2 Of the bot changed the model from GPT-3 to the newer GPT-3.5-turbo. The name of the repository has been changed to just "PyGPT" so it will be consistent with future updates. As a result of the repository being renamed, if you are migrating from V1 of the bot on Pterodactyl you will have to use the new version of the Pterodactyl Egg so it downloads from the new link which ends in PyGPT instead of PyGPT-3.**
+
 This is meant to run in Pterodactyl Panel or run Standalone on any platform.
 
 Inspiration for the Pterodactyl Egg was taken from ParkerVCP's generic Python egg. All credit to ParkerVCP for making great eggs and yolks (Docker Images that go with the Pterodactyl Eggs). https://github.com/parkervcp/eggs/tree/master/generic/python
