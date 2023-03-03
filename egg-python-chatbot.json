@@ -4,10 +4,10 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2023-01-27T16:35:23-08:00",
+    "exported_at": "2023-03-03T14:53:00-08:00",
     "name": "Python Chatbot",
     "author": "loki@crazycoder.dev",
-    "description": "",
+    "description": null,
     "features": null,
     "docker_images": {
         "Python 3.11": "ghcr.io\/parkervcp\/yolks:python_3.11",
@@ -27,7 +27,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n# Python App Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt install -y git curl jq file unzip make gcc g++ python python-dev libtool\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\n\r\necho \"Installing latest version of PyGPT-3 from Github repo \\\"https:\/\/github.com\/Loki-101\/PyGPT-3\\\"\"\r\ncurl -LJO https:\/\/github.com\/Loki-101\/PyGPT-3\/releases\/latest\/download\/app.py -LJO https:\/\/github.com\/Loki-101\/PyGPT-3\/releases\/latest\/download\/requirements.txt\r\n\r\nexport HOME=\/mnt\/server\r\necho \"Installing python requirements into folder\"\r\nif [[ ! -z ${PY_PACKAGES} ]]; then\r\npip install -U --prefix .local ${PY_PACKAGES}\r\nfi\r\nif [ -f \/mnt\/server\/requirements.txt ]; then\r\npip install -U --prefix .local -r ${REQUIREMENTS_FILE}\r\nfi\r\necho -e \"Installation is now Complete.\"\r\nexit 0",
+            "script": "#!\/bin\/bash\r\n# Python App Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt install -y git curl jq file unzip make gcc g++ python python-dev libtool\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\necho \"Installing latest version of PyGPT from Github repo \\\"https:\/\/github.com\/Loki-101\/PyGPT\\\"\"\r\ncurl -LJO https:\/\/github.com\/Loki-101\/PyGPT\/releases\/latest\/download\/app.py -LJO https:\/\/github.com\/Loki-101\/PyGPT\/releases\/latest\/download\/requirements.txt\r\nexport HOME=\/mnt\/server\r\necho \"Installing python requirements into folder\"\r\nif [[ ! -z ${PY_PACKAGES} ]]; then\r\npip install -U --prefix .local ${PY_PACKAGES}\r\nfi\r\nif [ -f \/mnt\/server\/requirements.txt ]; then\r\npip install -U --prefix .local -r ${REQUIREMENTS_FILE}\r\nfi\r\necho -e \"Installation is now Complete.\"\r\nexit 0",
             "container": "python:3.8-slim",
             "entrypoint": "bash"
         }
@@ -68,7 +68,7 @@
             "description": "The channel you want the chatbot to respond to messages in",
             "env_variable": "channel_id",
             "default_value": "",
-            "user_viewable": false,
+            "user_viewable": true,
             "user_editable": true,
             "rules": "required|string|max:20",
             "field_type": "text"
