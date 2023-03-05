@@ -30,7 +30,8 @@ def generate_response(message, identifier):
         response = openai.ChatCompletion.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": f"You are a helpful assistant named {bot_name}."},
+                {"role": "system", "content": f"You are a helpful assistant named {bot_name}. \
+                If you print code, you will format it in markdown with ```language, where language is the language you're outputting."},
                 {"role": "user", "content": message},
                 {"role": "assistant", "content": ""}
             ],
