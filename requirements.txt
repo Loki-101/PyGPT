@@ -1,2 +1,2 @@
-discord
-openai
+discord.py==2.2.2
+openai==0.27.2
