@@ -56,7 +56,8 @@ async def on_message(message):
     if message.author == client.user:
         return
     lowercase_content = message.content.lower()
-    if lowercase_content.startswith(f"hey {bot_name}"):
+    if lowercase_content.startswith(f"hey {bot_name}") \
+        and str(message.channel.id) == str(channel_id):
         print("User: ", f"{message.author.name}, {message.author.id}")
         if debug:
             print("Original Prompt: ", message.content)
