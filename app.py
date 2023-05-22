@@ -69,6 +69,12 @@ async def on_message(message):
         # Call generate_response with the modified prompt
         response = generate_response(prompt, message.author.id)
         # Send the response
-        await message.channel.send(response)
+        if len(response) <= 2000:
+            await message.channel.send(response)
+        else:
+            # Split the message into chunks of 2000 characters
+            chunks = [response[i:i+2000] for i in range(0, len(response), 2000)]
+            for chunk in chunks:
+                await message.channel.send(chunk)
 
 client.run(discord_bot_token)
