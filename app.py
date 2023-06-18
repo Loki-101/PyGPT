@@ -1,5 +1,5 @@
 # Author: Loki
-# Discord: Loki_101#3580
+# Discord: loki_101
 # Email: loki@crazycoder.dev
 
 import openai
