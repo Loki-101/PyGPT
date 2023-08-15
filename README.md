@@ -17,7 +17,7 @@ Then once the bot is in your server all it needs is to be able to view messages 
 
 The bot uses environmental variables rather than putting variables directly in the code for security reasons.
 
-This bot is designed to run in a specified channel only so that you can set a channel to slowmode to avoid overloading your API Key. You can get an api key at https://beta.openai.com.
+This bot is designed to run in a specified channel only so that you can set a channel to slowmode to avoid overloading your API Key. You can get an api key at https://platform.openai.com. You can choose a spending soft limit where you'll get emailed and a hard limit where it will just stop.
 The bot by default will only respond to messages that start with Hey and then the bot's name that you set in an environmental variable. Some examples:
 Hey PyGPT, how are you doing today?
 hey Pygpt, how are you doing today?
