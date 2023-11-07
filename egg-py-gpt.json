@@ -4,8 +4,8 @@
         "version": "PTDL_v2",
         "update_url": null
     },
-    "exported_at": "2023-11-06T17:15:55-08:00",
-    "name": "Python Chatbot",
+    "exported_at": "2023-11-06T17:36:09-08:00",
+    "name": "PyGPT",
     "author": "loki@crazycoder.dev",
     "description": null,
     "features": null,
@@ -22,8 +22,8 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/bash\r\n# Python App Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt install -y git curl jq file unzip make gcc g++ python python-dev libtool\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\necho \"Installing latest version of PyGPT from Github repo \\\"https:\/\/github.com\/Loki-101\/PyGPT\\\"\"\r\ncurl -LJO https:\/\/github.com\/Loki-101\/PyGPT\/releases\/latest\/download\/app.py -LJO https:\/\/github.com\/Loki-101\/PyGPT\/releases\/latest\/download\/requirements.txt\r\nexport HOME=\/mnt\/server\r\necho \"Installing python requirements into folder\"\r\nif [[ ! -z ${PY_PACKAGES} ]]; then\r\npip install -U --prefix .local ${PY_PACKAGES}\r\nfi\r\nif [ -f \/mnt\/server\/requirements.txt ]; then\r\npip install -U --prefix .local -r ${REQUIREMENTS_FILE}\r\nfi\r\necho -e \"Installation is now Complete.\"\r\nexit 0",
-            "container": "python:3.8-slim",
+            "script": "#!\/bin\/bash\r\n# Python App Installation Script using PyPy\r\n#\r\n# Server Files: \/mnt\/server\r\napt update\r\napt install -y git curl jq file unzip make gcc g++ libtool\r\n# Create the server directory if it doesn't exist\r\nmkdir -p \/mnt\/server\r\ncd \/mnt\/server\r\necho \"Installing latest version of PyGPT from Github repo \\\"https:\/\/github.com\/Loki-101\/PyGPT\\\"\"\r\n# Download the latest app.py and requirements.txt from the PyGPT GitHub releases\r\ncurl -LJO \"https:\/\/github.com\/Loki-101\/PyGPT\/releases\/latest\/download\/app.py\"\r\ncurl -LJO \"https:\/\/github.com\/Loki-101\/PyGPT\/releases\/latest\/download\/requirements.txt\"\r\n# Set the HOME environment variable to the server directory\r\nexport HOME=\/mnt\/server\r\necho \"Installing python requirements into folder\"\r\n# Install any additional packages specified in the PY_PACKAGES environment variable\r\nif [[ ! -z ${PY_PACKAGES} ]]; then\r\n\/opt\/pypy\/bin\/pip install -U --prefix .local ${PY_PACKAGES}\r\nfi\r\n# Install the requirements from the requirements.txt file if it exists\r\nif [ -f \/mnt\/server\/requirements.txt ]; then\r\n\/opt\/pypy\/bin\/pip install -U --prefix .local -r \/mnt\/server\/requirements.txt\r\nfi\r\necho -e \"Installation is now Complete.\"\r\nexit 0",
+            "container": "pypy:3.10-7.3.13-slim",
             "entrypoint": "bash"
         }
     },
