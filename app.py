@@ -32,7 +32,7 @@ if debug:
 # Initialize the Discord client
 intents = discord.Intents.default()
 intents.message_content = True
-client = commands.Bot(intents=intents)
+client = commands.Bot(command_prefix="", intents=intents)
 
 # Function to generate a response to a message using the OpenAI API
 async def generate_response(message, identifier):  # Make this function async
