@@ -1,3 +1,5 @@
+# Known timeout issue with Release V5, use V4 until this warning is removed from this README.md or have the program restart frequently. A fix is in the works, just waiting for the next timeout to test it; it's been happening about once every 24 hours, so ETA is 48 hours to be safe.
+
 # PyGPT
 Simple Python Discord ChatBot w/optional Pterodactyl Egg
 Powered by OpenAI
