@@ -1,4 +1,4 @@
-# PyGPT
+# PyGPT (Depreciated - newer version is not yet polished enough to be published)
 Simple Python Discord ChatBot w/optional Pterodactyl Egg
 Powered by OpenAI
 
